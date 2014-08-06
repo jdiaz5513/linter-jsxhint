@@ -1,8 +1,6 @@
 # linter-jsxhint package
 
-Copied and pasted from linter-jshint and modified to act on the source.js.jsx grammars
-
-This linter plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface to [jsxhint](http://www.jshint.com/docs/). It will be used with files that have the “JSX” syntax.
+This linter plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface to [jsxhint](https://github.com/STRML/JSXHint). It will be used with files that have the “JSX” syntax.
 
 ## Installation
 Linter package must be installed in order to use this plugin. If Linter is not installed, please follow the instructions [here](https://github.com/AtomLinter/Linter).
