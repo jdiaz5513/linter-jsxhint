@@ -4,11 +4,13 @@
   "activationEvents": [],
   "main": "./lib/init",
   "version": "0.0.3",
-  "description": "Lint JSX (React.js) on the fly, using jsxhint (not yet ready)",
+  "description": "Lint JSX (React.js) on the fly, using jsxhint",
   "repository": "https://github.com/AtomLinter/linter-jsxhint",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jsxhint": "~0.4.14"
+  }
 }
