@@ -16,7 +16,6 @@ class LinterJsxhint extends Linter
     '(?<message>.+) ' +
     # capture error, warning and code
     '\\(((?<error>E)|(?<warning>W))(?<code>[0-9]+)\\)'+
-    # '\\((?<warning>.).+\\)'
     ')'
 
   isNodeExecutable: yes
@@ -30,11 +29,22 @@ class LinterJsxhint extends Linter
 
   formatShellCmd: =>
     jsxhintExecutablePath = atom.config.get 'linter-jsxhint.jsxhintExecutablePath'
-    @cmd = "jsxhint --verbose --extract=auto"
+    @cmd = ['jsxhint', '--verbose', '--extract=auto']
     config = findFile @cwd, ['.jshintrc']
     if config
-      @cmd += " -c #{config}"
+      @cmd = @cmd.concat ['-c', config]
     @executablePath = "#{jsxhintExecutablePath}"
+
+  formatMessage: (match) ->
+    type = if match.error
+      "E"
+    else if match.warning
+      "W"
+    else
+      warn "Regex does not match lint output", match
+      ""
+
+    "#{match.message} (#{type}#{match.code})"
 
   destroy: ->
     atom.config.unobserve 'linter-jsxhint.jsxhintExecutablePath'
