@@ -3,7 +3,7 @@
   "linter-package": true,
   "activationEvents": [],
   "main": "./lib/init",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Lint JSX (React.js) on the fly, using jsxhint",
   "repository": "https://github.com/AtomLinter/linter-jsxhint",
   "license": "MIT",
@@ -11,6 +11,6 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "jsxhint": "~0.4.14"
+    "jsxhint": "~0.7.0"
   }
 }
